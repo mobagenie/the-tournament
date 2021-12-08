@@ -15,8 +15,8 @@ const version = 'v1'
 const storage_root = (ENV=='production') ? 'embed' : 'embed_stg';
 
 // 再抽選対応（ラグビー）
-const redraw = require('./tags/custom/redraw_rugby_2.tag');
-const redrawIds = (ENV=='production') ? ['7KiYrvKJrZEIM3nPeng1', 'G5R94tIRbsnb200EXnO2'] : ['y5SAFTmuhobQzeerABvm', 'sCJIlCEJ5YacjmUt8WfR'];
+const redraw = require('./tags/custom/redraw_rugby.tag');
+const redrawIds = (ENV=='production') ? ['xxx', 'xxx', 'xxx'] : ['fCNKrMW3XVWDoKrgQCo5', 'ViRA5V7YOjLj9AweRmED', '8WQmqJgJjkSkqWqVUbjw'];
 
 // 1回戦のみ出力対応（ラグビー）
 const roundOnlyTag = require('./tags/custom/draw_round_only.tag');
@@ -237,23 +237,20 @@ exports.returnRSS = functions.https.onRequest((req, res) => {
 
 var redrawRugby = function() {
   let id1 = redrawIds[0];
-  // let id2 = redrawIds[1];
-  // let id3 = redrawIds[2];
-  let id3 = redrawIds[1];
+  let id2 = redrawIds[1];
+  let id3 = redrawIds[2];
 
-  // let id = id1 + id2 + id3
-  let id = id1 + id3
+  let id = id1 + id2 + id3
   admin.firestore().collection('tournaments').doc(id1).get().then(doc => {
     const tournament = doc.data();
 
-    // admin.firestore().collection('tournaments').doc(id2).get().then(doc2 => {
-    //   const tournament2 = doc2.data();
+    admin.firestore().collection('tournaments').doc(id2).get().then(doc2 => {
+      const tournament2 = doc2.data();
 
       admin.firestore().collection('tournaments').doc(id3).get().then(doc3 => {
         const tournament3 = doc3.data();
 
-        // var html = riot.render(redraw, {tournament: tournament, tournament2: tournament2, tournament3: tournament3, editable: false, embed: true});
-        var html = riot.render(redraw, {tournament: tournament, tournament3: tournament3, editable: false, embed: true});
+        var html = riot.render(redraw, {tournament: tournament, tournament2: tournament2, tournament3: tournament3, editable: false, embed: true});
         html = html.replace(/\r?\n/g, '<br>');
         html = html.replace(/<\/?bracket>/g, '');
         html = autoLinkText(html);
@@ -346,7 +343,7 @@ var redrawRugby = function() {
             gzip: true
           });
         })
-      // })
+      })
     })
   })
 }

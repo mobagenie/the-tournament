@@ -1,5 +1,5 @@
 <redraw>
-  <div id="bracket" class="bracket { skipConsolation: !tournament.consolationRound, scoreLess: tournament.scoreLess, showBye: showBye, editable: editable, embed: embed, profileImages: embed && tournament.profileImages }" tabindex="0">
+  <div id="bracket" class="bracket { skipConsolation: !tournament.consolationRound, scoreLess: tournament.scoreLess, showBye: showBye, editable: editable, embed: embed, profileImages: embed && tournament.profileImages, showMatchMeta: tournament.showMatchMeta }" tabindex="0">
     <div class="block left">
       <!-- 再抽選前のround（roundにclass追加） -->
       <div class="round { final: isFinalRound(roundIndex), hidden: roundIndex > 2 }" each={ round, roundIndex in tournament.results }>

@@ -49,6 +49,12 @@
   flex-direction: column;
   justify-content: center;
 }
+/* 試合メタ情報の表示 */
+.teamContainer:before {
+  content: attr(data-match-meta);
+  font-size: 12px;
+}
+
 .team {
   display: flex;
   align-items: center;

@@ -4,7 +4,7 @@
       <!-- 再抽選前のround（roundにclass追加） -->
       <div class="round { final: isFinalRound(roundIndex), hidden: roundIndex > 2 }" each={ round, roundIndex in tournament.results }>
         <div class="match { matchClass(roundIndex, matchIndex) } { matchFlex(roundIndex, matchIndex) }" each={ match, matchIndex in round } data-round-index={ roundIndex } data-match-index={ matchIndex } tabindex={ match['bye'] && roundIndex!=0 ? false : 0 }>
-          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }">
+          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }" data-match-meta={ match['meta'] }>
             <div class="team { teamClass(match, i) }" data-teamid={ teamIndex } each={ teamIndex, i in matchTeamIndexes(roundIndex, matchIndex) }>
               <span class="winnerSelect" if={ editable }>
                 <input type="radio" name="winner_{ roundIndex }_{ matchIndex }" data-round-index={ roundIndex } data-match-index={ matchIndex } value={ i } checked={ i == match['winner'] } onclick={ updateWinner } disabled={ match.bye }>
@@ -78,7 +78,7 @@
       <!-- 再抽選後のround（通常まま。tournamentが2になってる） -->
       <div class="round { hidden: roundIndex > 0 }" each={ round, roundIndex in tournament2.results }>
         <div class="match { matchClass(roundIndex, matchIndex, tournament2) } match-flex-8" each={ match, matchIndex in round } data-round-index={ roundIndex } data-match-index={ matchIndex } tabindex={ match['bye'] && roundIndex!=0 ? false : 0 }>
-          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }">
+          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }" data-match-meta={ match['meta'] }>
             <div class="team { teamClass(match, i) }" data-teamid={ teamIndex } each={ teamIndex, i in matchTeamIndexes(roundIndex, matchIndex, tournament2) }>
               <span class="winnerSelect" if={ editable }>
                 <input type="radio" name="winner_{ roundIndex }_{ matchIndex }" data-round-index={ roundIndex } data-match-index={ matchIndex } value={ i } checked={ i == match['winner'] } onclick={ updateWinner } disabled={ match.bye }>
@@ -147,7 +147,7 @@
       <!-- 再抽選後のround（通常まま。tournamentが3になってる） -->
       <div class="round { final: roundIndex == 1 }" each={ round, roundIndex in tournament3.results }>
         <div class="match { matchClass(roundIndex, matchIndex, tournament3) } match-flex-8" each={ match, matchIndex in round } data-round-index={ roundIndex } data-match-index={ matchIndex } tabindex={ match['bye'] && roundIndex!=0 ? false : 0 }>
-          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }">
+          <div class="teamContainer { teamContainerPosition(roundIndex, matchIndex) }" data-match-meta={ match['meta'] }>
             <div class="team { teamClass(match, i) }" data-teamid={ teamIndex } each={ teamIndex, i in matchTeamIndexes(roundIndex, matchIndex, tournament3) }>
               <span class="winnerSelect" if={ editable }>
                 <input type="radio" name="winner_{ roundIndex }_{ matchIndex }" data-round-index={ roundIndex } data-match-index={ matchIndex } value={ i } checked={ i == match['winner'] } onclick={ updateWinner } disabled={ match.bye }>

@@ -1,4 +1,4 @@
-<redraw>
+<roundOnly>
   <div id="bracket" class="bracket { skipConsolation: !tournament.consolationRound, scoreLess: tournament.scoreLess, showBye: showBye, editable: editable, embed: embed, profileImages: embed && tournament.profileImages }" tabindex="0">
     <div class="block left">
       <!-- 1回戦のみ出力（hidden: roundIndex > 0） -->
@@ -404,4 +404,4 @@
       }
     }
   </script>
-</redraw>
+</roundOnly>

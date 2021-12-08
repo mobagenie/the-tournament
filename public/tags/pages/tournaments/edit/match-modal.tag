@@ -51,6 +51,10 @@
               </div>
             </div>
           </div>
+
+          <div class="row" if={ tournament.showMatchMeta }>
+            <input type="text" value={ match.meta } onchange={ updateMeta } placeholder='試合のメタ情報。トーナメント上に表示されます。'>
+          </div>
         </div>
       </div>
 
@@ -169,6 +173,10 @@
 
     updateLabel(e) {
       that.match.label = e.currentTarget.value
+    }
+
+    updateMeta(e) {
+      that.match.meta = e.currentTarget.value
     }
 
     updateWinner(e) {

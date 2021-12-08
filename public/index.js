@@ -16,7 +16,7 @@ const storage_root = (ENV=='production') ? 'embed' : 'embed_stg';
 
 // 再抽選対応（ラグビー）
 const redraw = require('./tags/custom/redraw_rugby.tag');
-const redrawIds = (ENV=='production') ? ['xxx', 'xxx', 'xxx'] : ['fCNKrMW3XVWDoKrgQCo5', 'ViRA5V7YOjLj9AweRmED', '8WQmqJgJjkSkqWqVUbjw'];
+const redrawIds = (ENV=='production') ? ['qChLxhSeoI6F7oRpEGvH', 'RPyYEwuKIIAQPEKbtrQo', 'BnMgudbFMwrDRTw3hXXS'] : ['fCNKrMW3XVWDoKrgQCo5', 'ViRA5V7YOjLj9AweRmED', '8WQmqJgJjkSkqWqVUbjw'];
 
 // 1回戦のみ出力対応（ラグビー）
 const roundOnlyTag = require('./tags/custom/draw_round_only.tag');

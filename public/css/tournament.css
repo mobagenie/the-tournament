@@ -369,6 +369,8 @@
   margin-right: 30px;
   margin-bottom: 30px;
 }
+/* 決勝戦のポップアップ表示位置調整 */
+.final.match:focus .popupContainer, .final.match:focus-within .popupContainer { left: auto; right: 10px; }
 /* 両山の決勝ポップアップの位置調整 */
 .doubleBracket .final.match:focus .popupContainer, .doubleBracket .final.match:focus-within .popupContainer { top: auto; bottom: -150px; }
 .doubleBracket .consolation.match:focus .popupContainer, .doubleBracket .consolation.match:focus-within .popupContainer { top: 150px; }

@@ -2,9 +2,9 @@
   <div class="ui info message attached">
     <span class="ui red small label">NEW</span>
     &nbsp;
-    <a href="https://league.the-tournament.jp" target="_blank">
-      総当りのリーグ表を作成できる機能をベータ版で公開しました🎉ぜひお試しください！
-      https://league.the-tournament.jp
+    <a href="https://the-tournament.vercel.app" target="_blank">
+      リーグ表機能を統合したリニューアル版をテスト公開しています🎉ぜひお試しください！
+      https://the-tournament.vercel.app
       <i class="icon external link small"></i>
     </a>
   </div>

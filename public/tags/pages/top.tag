@@ -125,12 +125,13 @@
           リーグ表作成機能（ベータ版）
         </h3>
         <div>
-          総当りのリーグ表を作成できる新機能をベータ公開しました。
-          よければぜひお試しください。
+          現在開発中のリニューアル版では、総当りのリーグ表を作成できる新機能を実装しています。
+          現在リニューアル版もテスト公開中ですので、よければぜひお試しください。
+          （アカウント情報や作成したデータは旧版と同期されます）
         </div>
         <br><br>
         <div>
-          <a href="https://league.the-tournament.jp" target="_blank" class="ui primary large button">
+          <a href="https://the-tournament.vercel.app" target="_blank" class="ui primary large button">
             リーグ表を作成する
             <i class="icon external link small"></i>
           </a>
